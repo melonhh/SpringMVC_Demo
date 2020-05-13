@@ -13,7 +13,13 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
+    <!-- 使支持通过name映射controller -->
     <bean id="requestMappingHandlerMapping"
           class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>
     <!--    dispatchServlet 将请求交给 handlerMapping，handlerMapping根据url放回响应的 Controller-->
+
+    <!--    国际化资源文件-->
+    <bean id="messageResource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename" value="i18n"/>
+    </bean>
 </beans>
